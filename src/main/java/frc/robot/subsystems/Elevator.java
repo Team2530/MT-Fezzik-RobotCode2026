@@ -1,5 +1,6 @@
 package frc.robot.subsystems;
 
+import com.revrobotics.spark.SparkClosedLoopController;
 import com.revrobotics.spark.SparkFlex;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.config.SparkFlexConfig;
@@ -26,8 +27,9 @@ public class Elevator {
     // LeftConfig
     //     .closedLoop
     //         .pid(ElevatorConstants.kP)
+    private final SparkClosedLoopController elevatorController;
 
     public Elevator(){
-        
+        elevatorController = m_Motor.getClosedLoopController();
     }
 }
