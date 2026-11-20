@@ -1,5 +1,6 @@
 package frc.robot.subsystems;
 
+import com.revrobotics.spark.SparkClosedLoopController;
 import com.revrobotics.spark.SparkFlex;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 
@@ -13,7 +14,9 @@ public class Elevator {
         MotorType.kBrushless
     );
 
+    private final SparkClosedLoopController elevatorController;
+
     public Elevator(){
-        
+        elevatorController = m_Motor.getClosedLoopController();
     }
 }
